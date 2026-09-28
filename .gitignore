@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+work/
+
+# Local data, credentials, and derived caches are not source artifacts.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.zip
+*.dat
+*.apn
+*.qrs
+outputs/*.pkl
+outputs/features_preview.json
+outputs/environment.json
+outputs/artifact_hashes.json
+outputs/*_run.txt
+outputs/notebook_execution.txt

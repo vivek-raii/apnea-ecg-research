@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "records": 70,
+  "predicted_minutes": 522,
+  "cli_http_predictions_match": true,
+  "invalid_record_status": 400
+}

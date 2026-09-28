@@ -1,0 +1,12 @@
+{
+  "dataset_zip": "D:/Mtech Research/apnea-ecg-database-1.0.0.zip",
+  "seed": 42,
+  "holdout_fraction_groups": 0.25,
+  "cv_folds": 3,
+  "exclude_records": ["c06"],
+  "threshold_objective": "development OOF balanced accuracy",
+  "selection_objective": "development OOF average precision",
+  "bootstrap_group_replicates": 500,
+  "noise_snr_db": [20, 10],
+  "noise_windows_per_record": 15
+}

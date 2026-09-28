@@ -1,0 +1,236 @@
+[
+  {
+    "model": "logistic_regression",
+    "fold": 0,
+    "train_groups": [
+      "a04",
+      "a05",
+      "a07",
+      "a08",
+      "b01",
+      "b02",
+      "c01",
+      "c04",
+      "c05",
+      "c10"
+    ],
+    "validation_groups": [
+      "a02",
+      "a03",
+      "a06",
+      "a15",
+      "a19",
+      "b04",
+      "c03",
+      "c07"
+    ]
+  },
+  {
+    "model": "logistic_regression",
+    "fold": 1,
+    "train_groups": [
+      "a02",
+      "a03",
+      "a05",
+      "a06",
+      "a07",
+      "a15",
+      "a19",
+      "b02",
+      "b04",
+      "c03",
+      "c05",
+      "c07",
+      "c10"
+    ],
+    "validation_groups": [
+      "a04",
+      "a08",
+      "b01",
+      "c01",
+      "c04"
+    ]
+  },
+  {
+    "model": "logistic_regression",
+    "fold": 2,
+    "train_groups": [
+      "a02",
+      "a03",
+      "a04",
+      "a06",
+      "a08",
+      "a15",
+      "a19",
+      "b01",
+      "b04",
+      "c01",
+      "c03",
+      "c04",
+      "c07"
+    ],
+    "validation_groups": [
+      "a05",
+      "a07",
+      "b02",
+      "c05",
+      "c10"
+    ]
+  },
+  {
+    "model": "random_forest",
+    "fold": 0,
+    "train_groups": [
+      "a04",
+      "a05",
+      "a07",
+      "a08",
+      "b01",
+      "b02",
+      "c01",
+      "c04",
+      "c05",
+      "c10"
+    ],
+    "validation_groups": [
+      "a02",
+      "a03",
+      "a06",
+      "a15",
+      "a19",
+      "b04",
+      "c03",
+      "c07"
+    ]
+  },
+  {
+    "model": "random_forest",
+    "fold": 1,
+    "train_groups": [
+      "a02",
+      "a03",
+      "a05",
+      "a06",
+      "a07",
+      "a15",
+      "a19",
+      "b02",
+      "b04",
+      "c03",
+      "c05",
+      "c07",
+      "c10"
+    ],
+    "validation_groups": [
+      "a04",
+      "a08",
+      "b01",
+      "c01",
+      "c04"
+    ]
+  },
+  {
+    "model": "random_forest",
+    "fold": 2,
+    "train_groups": [
+      "a02",
+      "a03",
+      "a04",
+      "a06",
+      "a08",
+      "a15",
+      "a19",
+      "b01",
+      "b04",
+      "c01",
+      "c03",
+      "c04",
+      "c07"
+    ],
+    "validation_groups": [
+      "a05",
+      "a07",
+      "b02",
+      "c05",
+      "c10"
+    ]
+  },
+  {
+    "model": "hist_gradient_boosting",
+    "fold": 0,
+    "train_groups": [
+      "a04",
+      "a05",
+      "a07",
+      "a08",
+      "b01",
+      "b02",
+      "c01",
+      "c04",
+      "c05",
+      "c10"
+    ],
+    "validation_groups": [
+      "a02",
+      "a03",
+      "a06",
+      "a15",
+      "a19",
+      "b04",
+      "c03",
+      "c07"
+    ]
+  },
+  {
+    "model": "hist_gradient_boosting",
+    "fold": 1,
+    "train_groups": [
+      "a02",
+      "a03",
+      "a05",
+      "a06",
+      "a07",
+      "a15",
+      "a19",
+      "b02",
+      "b04",
+      "c03",
+      "c05",
+      "c07",
+      "c10"
+    ],
+    "validation_groups": [
+      "a04",
+      "a08",
+      "b01",
+      "c01",
+      "c04"
+    ]
+  },
+  {
+    "model": "hist_gradient_boosting",
+    "fold": 2,
+    "train_groups": [
+      "a02",
+      "a03",
+      "a04",
+      "a06",
+      "a08",
+      "a15",
+      "a19",
+      "b01",
+      "b04",
+      "c01",
+      "c03",
+      "c04",
+      "c07"
+    ],
+    "validation_groups": [
+      "a05",
+      "a07",
+      "b02",
+      "c05",
+      "c10"
+    ]
+  }
+]

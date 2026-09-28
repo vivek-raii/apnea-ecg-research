@@ -1,0 +1,11 @@
+test_decoder_against_independent_wfdb (__main__.PipelineTests.test_decoder_against_independent_wfdb) ... ok
+test_extraction_inference_parity (__main__.PipelineTests.test_extraction_inference_parity) ... ok
+test_flat_window_and_input_validation (__main__.PipelineTests.test_flat_window_and_input_validation) ... ok
+test_known_duplicate_and_grouping (__main__.PipelineTests.test_known_duplicate_and_grouping) ... ok
+test_splits_and_saved_prediction_parity (__main__.PipelineTests.test_splits_and_saved_prediction_parity) ... ok
+test_synthetic_heartbeat_spacing (__main__.PipelineTests.test_synthetic_heartbeat_spacing) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.966s
+
+OK
