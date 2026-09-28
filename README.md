@@ -8,6 +8,21 @@ For a GitHub clone, download the original PhysioNet archive separately and updat
 
 ## Start here
 
+### Hosted dashboard
+
+`app.py` is the Streamlit cloud entry point, with runtime dependencies in
+`requirements.txt`. Deploy the `main` branch using Python 3.12 on Streamlit
+Community Cloud. The cloud app supports bounded CSV ECG inference without the
+original local ZIP, plus an evaluation dashboard read from `outputs/metrics.json`.
+To test locally, install `requirements.txt` and run `python -m streamlit run app.py`.
+
+After retraining, commit and push `outputs/metrics.json`, both model artifacts,
+and the regenerated report together. Streamlit's GitHub deployment updates from
+`main` automatically. The UI displays actual held-out values, including decreases;
+pushing source code alone does not retrain or improve the model. The metrics
+fingerprint in the UI identifies the evaluation artifact currently deployed.
+
+
 1. Open `outputs/results_report.html` in your browser for results and plots.
 2. Open `outputs/Apnea_ECG_End_to_End.ipynb` in Jupyter or VS Code for the explained workflow and saved outputs.
 3. To run predictions or repeat training, use the commands below in PowerShell. Use the included environment, not an unrelated Python kernel.

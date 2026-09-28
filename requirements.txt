@@ -1,0 +1,7 @@
+# Match the versions used to serialize the trained scikit-learn model.
+streamlit==1.64.0
+numpy==2.5.3
+pandas==3.0.6
+scipy==1.18.1
+scikit-learn==1.9.1
+joblib==1.6.0
