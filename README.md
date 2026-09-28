@@ -10,6 +10,8 @@ For a GitHub clone, download the original PhysioNet archive separately and updat
 
 ### Hosted dashboard
 
+Live app: https://vivek-apnea-ecg-research.streamlit.app/
+
 `app.py` is the Streamlit cloud entry point, with runtime dependencies in
 `requirements.txt`. Deploy the `main` branch using Python 3.12 on Streamlit
 Community Cloud. The cloud app supports bounded CSV ECG inference without the

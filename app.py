@@ -17,8 +17,8 @@ from predict import predict_frame
 
 st.set_page_config(page_title='Apnea ECG Research', page_icon='🫀', layout='wide')
 st.title('Apnea ECG Research')
-st.caption('ECG-based sleep-apnea detection • Reproducible research dashboard')
-st.warning('Experimental research model — not for diagnosis. Held-out sensitivity is currently low. Scores are not calibrated disease probabilities.')
+st.caption('ECG-based sleep-apnea detection • Reproducible research dashboard • Auto-deployed from GitHub main')
+st.warning('Experimental research model — not for diagnosis. Review the held-out metrics below. Scores are not calibrated disease probabilities.')
 
 # Read the committed metrics on every rerun. No hardcoded performance numbers.
 metrics = json.loads((ROOT / 'outputs/metrics.json').read_text())
@@ -33,11 +33,11 @@ evaluation, inference, about = st.tabs(['Evaluation', 'Try inference', 'Deployme
 with evaluation:
     st.subheader('Model comparison on development data')
     st.caption('These scores were used for model selection; they are not independent test performance.')
-    st.dataframe(pd.DataFrame(metrics['development_comparison'])[['model', 'accuracy', 'balanced_accuracy', 'sensitivity', 'specificity', 'auroc']], hide_index=True, use_container_width=True)
+    st.dataframe(pd.DataFrame(metrics['development_comparison'])[['model', 'accuracy', 'balanced_accuracy', 'sensitivity', 'specificity', 'auroc']], hide_index=True, width='stretch')
     st.subheader('Held-out confusion matrix')
-    st.dataframe(pd.DataFrame([[holdout['tn'], holdout['fp']], [holdout['fn'], holdout['tp']]], index=['Reference normal', 'Reference apnea'], columns=['Predicted normal', 'Predicted apnea']), use_container_width=True)
+    st.dataframe(pd.DataFrame([[holdout['tn'], holdout['fp']], [holdout['fn'], holdout['tp']]], index=['Reference normal', 'Reference apnea'], columns=['Predicted normal', 'Predicted apnea']), width='stretch')
     st.subheader('Group-bootstrap 95% intervals')
-    st.dataframe(pd.DataFrame(metrics['holdout_group_bootstrap_95pct']).T, use_container_width=True)
+    st.dataframe(pd.DataFrame(metrics['holdout_group_bootstrap_95pct']).T, width='stretch')
     st.download_button('Download complete evaluation JSON', (ROOT / 'outputs/metrics.json').read_bytes(), 'metrics.json', 'application/json')
     st.download_button('Download evaluation report', (ROOT / 'outputs/results_report.html').read_bytes(), 'results_report.html', 'text/html')
 
@@ -71,7 +71,7 @@ with inference:
                 result = predict_frame(pd.DataFrame(rows), bundle)
             st.caption(f"Threshold: {bundle['threshold']:.2f}. Ignored trailing samples: {len(values) % WINDOW}. A prediction of 1 means apnea; 0 means normal.")
             st.line_chart(result.set_index('minute')[['score']])
-            st.dataframe(result, hide_index=True, use_container_width=True)
+            st.dataframe(result, hide_index=True, width='stretch')
             st.download_button('Download predictions', result.to_csv(index=False), 'predictions.csv', 'text/csv')
         except (ValueError, TypeError, pd.errors.ParserError) as exc:
             st.error(str(exc))
