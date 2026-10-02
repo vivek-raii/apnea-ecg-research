@@ -1,0 +1,20 @@
+[
+  {
+    "record": "a02",
+    "minute": 120,
+    "baseline_count": 80,
+    "xqrs_count": 82
+  },
+  {
+    "record": "b01",
+    "minute": 120,
+    "baseline_count": 79,
+    "xqrs_count": 79
+  },
+  {
+    "record": "c01",
+    "minute": 120,
+    "baseline_count": 56,
+    "xqrs_count": 56
+  }
+]

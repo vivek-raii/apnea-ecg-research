@@ -14,6 +14,8 @@ work/
 *.apn
 *.qrs
 outputs/*.pkl
+outputs/**/*.pkl
+outputs/xqrs_experiment/*.joblib
 outputs/features_preview.json
 outputs/environment.json
 outputs/artifact_hashes.json

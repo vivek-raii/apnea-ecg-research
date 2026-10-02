@@ -31,6 +31,15 @@ st.info('These metrics evaluate the development-trained model on held-out record
 
 evaluation, inference, about = st.tabs(['Evaluation', 'Try inference', 'Deployment & method'])
 with evaluation:
+    experiment_path = ROOT / 'outputs/xqrs_experiment/results.json'
+    if experiment_path.exists():
+        with st.expander('Latest experiment: adaptive heartbeat detection'):
+            experiment = json.loads(experiment_path.read_text())
+            st.write('Compared the baseline, aligned WFDB XQRS, and relative timing/amplitude features across three model families using the same grouped development folds.')
+            st.write('Selected by development average precision: ' + experiment['selected']['candidate'])
+            st.dataframe(pd.DataFrame(experiment['comparison'])[['candidate', 'average_precision', 'balanced_accuracy']], hide_index=True, width='stretch')
+            st.caption('Development selection scores, not test accuracy. ' + experiment['caveat'])
+            st.write(f"Selected-model held-out accuracy: {100 * experiment['holdout']['accuracy']:.1f}%. Change versus baseline: {experiment['delta_percentage_points']['accuracy']:+.1f} percentage points.")
     st.subheader('Model comparison on development data')
     st.caption('These scores were used for model selection; they are not independent test performance.')
     st.dataframe(pd.DataFrame(metrics['development_comparison'])[['model', 'accuracy', 'balanced_accuracy', 'sensitivity', 'specificity', 'auroc']], hide_index=True, width='stretch')
